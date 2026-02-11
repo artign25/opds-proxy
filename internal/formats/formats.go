@@ -56,11 +56,39 @@ var (
 		Label:               "ATOM",
 		ConvertibleFromEPUB: false,
 	}
+
+	FB2 = Format{
+		MimeType:            "application/fb2+zip",
+		Extension:           ".fb2",
+		Label:               "FB2",
+		ConvertibleFromEPUB: false,
+	}
+
+	HTML = Format{
+		MimeType:            "application/html+zip",
+		Extension:           ".html",
+		Label:               "HTML",
+		ConvertibleFromEPUB: false,
+	}
+
+	TXT = Format{
+		MimeType:            "application/txt+zip",
+		Extension:           ".txt",
+		Label:               "TXT",
+		ConvertibleFromEPUB: false,
+	}
+
+	RTF = Format{
+		MimeType:            "application/rtf+zip",
+		Extension:           ".rtf",
+		Label:               "RTF",
+		ConvertibleFromEPUB: false,
+	}
 )
 
 // AllFormats returns all supported formats
 func AllFormats() []Format {
-	return []Format{EPUB, KEPUB, MOBI, PDF, AZW3, ATOM}
+	return []Format{EPUB, KEPUB, MOBI, PDF, AZW3, ATOM, FB2, HTML, TXT, RTF}
 }
 
 // FormatByMimeType returns the format for a given MIME type
@@ -72,11 +100,15 @@ func FormatByMimeType(mimeType string) (Format, bool) {
 		PDF.MimeType:   PDF,
 		AZW3.MimeType:  AZW3,
 		ATOM.MimeType:  ATOM,
+		FB2.MimeType:   FB2,
+		HTML.MimeType:  HTML,
+		TXT.MimeType:   TXT,
+		RTF.MimeType:   RTF,
 		// Legacy/alternative MIME types
 		"application/mobi":       MOBI,
 		"application/x-epub+zip": EPUB,
 	}
-	
+
 	format, exists := formats[mimeType]
 	return format, exists
 }
@@ -90,8 +122,12 @@ func FormatByExtension(extension string) (Format, bool) {
 		PDF.Extension:   PDF,
 		AZW3.Extension:  AZW3,
 		ATOM.Extension:  ATOM,
+		FB2.Extension:   FB2,
+		HTML.Extension:  HTML,
+		TXT.Extension:   TXT,
+		RTF.Extension:   RTF,
 	}
-	
+
 	format, exists := formats[extension]
 	return format, exists
 }
