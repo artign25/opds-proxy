@@ -5,6 +5,7 @@ const NavigationFeedType string = "profile=opds-catalog"
 
 // OPDS acquisition constant
 const AcquisitionFeedRel string = "http://opds-spec.org/acquisition"
+const AcquisitionFeedRelOpenAccess string = "http://opds-spec.org/acquisition/open-access"
 
 // Feed represents the root element for acquisition or navigation feeds
 type Feed struct {
