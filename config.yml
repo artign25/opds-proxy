@@ -1,6 +1,3 @@
-debug: true
 feeds:
-  - name: "Project Gutenberg"
-    url: "https://www.gutenberg.org/ebooks/search.opds/"
-  - name: "Anarchist Library"
-    url: "https://theanarchistlibrary.org/opds"
+  - name: "Flibusta"
+    url: "https://flibusta.is/opds"
